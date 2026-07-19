@@ -1,8 +1,12 @@
+<div align="center">
+
 # Grounding Doesn't Pay
 
+### A token-matched negative result on creative diversity
+
 Grounding a language model in a real, in-context **domain specification** buys more
-creative diversity per idea — but never per token. This is the pre-registered,
-judge-free, budget-matched pilot behind that negative result.
+creative diversity *per idea* — but never *per token*.<br>
+A pre-registered, judge-free, budget-matched pilot behind that negative result.
 
 [![code license: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE)
 [![paper license: CC BY 4.0](https://img.shields.io/badge/paper%20%26%20figures-CC%20BY%204.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
@@ -10,9 +14,15 @@ judge-free, budget-matched pilot behind that negative result.
 [![ci](https://github.com/ulissesflores/grounding-doesnt-pay/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
 <!-- DOI badge added at release: [![DOI](https://zenodo.org/badge/DOI/<version-doi>.svg)](https://doi.org/<version-doi>) -->
 
+</div>
+
+> **In one line —** grounding helps; it just doesn't pay.
+
+---
+
 ## TL;DR
 
-Three ways to induce diversity at the generation stage, same model, same
+Three ways to induce diversity at the generation stage — same model, same
 temperature, same idea count, over two creative queries — measured as the number
 of distinct domain-blind embedding clusters (tokens-matched, agglomerative):
 
@@ -20,13 +30,19 @@ of distinct domain-blind embedding clusters (tokens-matched, agglomerative):
 |---|---:|---:|---:|
 | C1 — repeated sampling | 18,810 | 99 | **5.263** |
 | C2 — style-persona (no substrate) | 19,076 | 145 | **7.601** |
-| C7 — in-context domain spec | 127,470 | 161 | **1.263** ← last |
+| C7 — in-context domain spec | 127,470 | 161 | **1.263** &nbsp;← last |
 
 The grounded spec (C7) produces the most clusters *per idea*, yet the **fewest per
 token** — its 6.8× input-token cost dwarfs its 1.63× cluster gain (ceiling 1.8×).
 Grounding helps; it just doesn't pay.
 
+<div align="center">
+
 ![Tokens-matched diversity by arm, under both pre-registered clustering algorithms](output/figures/fig1_clusters_per_1k.png)
+
+</div>
+
+---
 
 ## Install
 
@@ -92,17 +108,25 @@ reproducible from that frozen generation. See [`PROVENANCE.md`](PROVENANCE.md).
 
 ## What is and isn't claimed
 
-- **Claimed:** grounded in-context specs are never the token-efficient frontier —
+- **Claimed** — grounded in-context specs are never the token-efficient frontier:
   invariant across both clustering algorithms, both embedding encoders, all three
   budget units, and any prompt-caching regime constructible from these tokens.
   Grounding *does* add per-proposal diversity over repeated sampling (+0.19 to
   +0.26 clusters/idea); it just never pays for it.
-- **Scoped:** *which* cheap arm is the frontier is algorithm-dependent (style-persona
+- **Scoped** — *which* cheap arm is the frontier is algorithm-dependent (style-persona
   under agglomerative, repeated sampling under HDBSCAN); the proposals-vs-tokens
   sign-flip lives on the agglomerative view and reverses under HDBSCAN. Both
   disclosed in the paper, not tuned away.
-- **Not claimed:** that grounding is useless on any metric, that targeted retrieval
+- **Not claimed** — that grounding is useless on any metric, that targeted retrieval
   would fail (untested), or that the result generalizes beyond Grok-4.20.
+
+## Author
+
+**Carlos Ulisses Flores** — Codex Hash Research Laboratory
+
+[![ORCID](https://img.shields.io/badge/ORCID-0000--0002--6034--7765-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0000-0002-6034-7765)
+[![Website](https://img.shields.io/badge/Website-ulissesflores.com-1f6feb)](https://ulissesflores.com)
+[![Lattes](https://img.shields.io/badge/Lattes%20CV-CNPq-0a7d3c)](http://lattes.cnpq.br/6905246706890561)
 
 ## Citation
 

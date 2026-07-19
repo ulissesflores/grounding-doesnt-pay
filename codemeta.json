@@ -18,6 +18,8 @@
       "givenName": "Carlos Ulisses",
       "familyName": "Flores",
       "@id": "https://orcid.org/0000-0002-6034-7765",
+      "url": "https://ulissesflores.com",
+      "sameAs": "http://lattes.cnpq.br/6905246706890561",
       "affiliation": {
         "@type": "Organization",
         "name": "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"

@@ -10,6 +10,7 @@ authors:
   - family-names: "Flores"
     given-names: "Carlos Ulisses"
     orcid: "https://orcid.org/0000-0002-6034-7765"
+    website: "https://ulissesflores.com"
     affiliation: "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
 license: Apache-2.0
 keywords:
@@ -26,6 +27,7 @@ preferred-citation:
     - family-names: "Flores"
       given-names: "Carlos Ulisses"
       orcid: "https://orcid.org/0000-0002-6034-7765"
+      website: "https://ulissesflores.com"
       affiliation: "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
   year: 2026
   languages:
