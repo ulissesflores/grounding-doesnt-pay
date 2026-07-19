@@ -12,7 +12,7 @@ A pre-registered, judge-free, budget-matched pilot behind that negative result.
 [![paper license: CC BY 4.0](https://img.shields.io/badge/paper%20%26%20figures-CC%20BY%204.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 [![python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
 [![ci](https://github.com/ulissesflores/grounding-doesnt-pay/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
-<!-- DOI badge added at release: [![DOI](https://zenodo.org/badge/DOI/<version-doi>.svg)](https://doi.org/<version-doi>) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21445129.svg)](https://doi.org/10.5281/zenodo.21445129)
 
 </div>
 
@@ -130,8 +130,10 @@ reproducible from that frozen generation. See [`PROVENANCE.md`](PROVENANCE.md).
 
 ## Citation
 
-Cite the Zenodo Version DOI of the release (minted with the artifact; see
-[`CITATION.cff`](CITATION.cff)). Until then:
+Cite the project's Zenodo DOI —
+[`10.5281/zenodo.21445129`](https://doi.org/10.5281/zenodo.21445129), the concept
+(all-versions) DOI that always resolves to the latest release (see
+[`CITATION.cff`](CITATION.cff)):
 
 ```bibtex
 @misc{flores2026grounding,
@@ -141,7 +143,7 @@ Cite the Zenodo Version DOI of the release (minted with the artifact; see
   year         = {2026},
   howpublished = {Codex Hash Research Laboratory, replication package},
   url          = {https://github.com/ulissesflores/grounding-doesnt-pay},
-  note         = {Zenodo Version DOI minted at release}
+  doi          = {10.5281/zenodo.21445129}
 }
 ```
 

@@ -88,13 +88,13 @@
     {
       "name": "paper",
       "kind": "artifact",
-      "merkle_root": "e1a2b169672987181afda520f17777ca1afc0444f7aae37e7833292e350773da",
+      "merkle_root": "a0f57010ee0608a0d6d11f7864f0a68d0aca02852baac66e53191809699b1a64",
       "leaves": {
-        "docs/paper/paper-final.docx": "eee5bba76aee2c2e197d7e85e7b614dca433234e2dbe6d49416058b5bf5eb819",
-        "docs/paper/paper-final.pdf": "720c2af45c0adc46b6ec02a84a1777b8aad0e6cc474c685562562d5a53103487"
+        "docs/paper/paper-final.docx": "5fedfbeda6dfec0b1d82c9fa312fa3fe199974810c01d0c2089af6915f8e607e",
+        "docs/paper/paper-final.pdf": "9abed1579e0f70aff967d896a3b39b43c850dbb69f55f95501d74e9a28f251bf"
       },
-      "hash": "e1a2b169672987181afda520f17777ca1afc0444f7aae37e7833292e350773da",
-      "chain_link": "831a6aef862b7406d641498605ab457b446d76029a348968c1f410d7a163216a"
+      "hash": "a0f57010ee0608a0d6d11f7864f0a68d0aca02852baac66e53191809699b1a64",
+      "chain_link": "f8ab258dfbd324c83696f8c8279461b6c09642bd763f73c2cf8ef6a654401f13"
     }
   ],
   "chain_order": [
@@ -104,6 +104,6 @@
     "scores",
     "paper"
   ],
-  "artifact_root": "831a6aef862b7406d641498605ab457b446d76029a348968c1f410d7a163216a",
+  "artifact_root": "f8ab258dfbd324c83696f8c8279461b6c09642bd763f73c2cf8ef6a654401f13",
   "doi_anchor": "set at release: the Zenodo Version DOI binds this artifact_root"
 }

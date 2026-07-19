@@ -6,7 +6,9 @@
   "codeRepository": "https://github.com/ulissesflores/grounding-doesnt-pay",
   "license": "https://spdx.org/licenses/Apache-2.0",
   "version": "0.1.0",
+  "identifier": "https://doi.org/10.5281/zenodo.21445129",
   "dateCreated": "2026-07-17",
+  "datePublished": "2026-07-19",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "Python",

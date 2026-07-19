@@ -1,10 +1,12 @@
-# version / date-released / doi are minted with the Zenodo release; until then the
-# BibTeX in README.md and this file cite the software by title + repository.
+# doi is the Zenodo concept (umbrella) DOI 10.5281/zenodo.21445129 — it always resolves
+# to the latest deposited version. Software version + release date below.
 cff-version: 1.2.0
 message: "If you use this replication package or cite the paper, please use the metadata below."
 title: "Grounding Doesn't Pay — replication package"
 type: software
 version: "0.1.0"
+date-released: "2026-07-19"
+doi: "10.5281/zenodo.21445129"
 repository-code: "https://github.com/ulissesflores/grounding-doesnt-pay"
 authors:
   - family-names: "Flores"
@@ -30,5 +32,6 @@ preferred-citation:
       website: "https://ulissesflores.com"
       affiliation: "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
   year: 2026
+  doi: "10.5281/zenodo.21445129"
   languages:
     - en
