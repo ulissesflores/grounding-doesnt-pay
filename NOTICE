@@ -1,0 +1,13 @@
+Grounding Doesn't Pay — replication package
+Copyright 2026 Carlos Ulisses Flores, Codex Hash Research Laboratory.
+
+This repository is dual-licensed:
+
+  * Source code (code/, scripts/, tests/, run_all.py) — Apache License 2.0.
+    See LICENSE and LICENSES/Apache-2.0.txt.
+
+  * Paper text and figures (docs/paper/*, output/figures/*) — Creative Commons
+    Attribution 4.0 International (CC BY 4.0). See LICENSES/CC-BY-4.0.txt.
+
+The frozen data in data/ are research records released to support reproduction;
+cite the paper (see CITATION.cff) when you use them.

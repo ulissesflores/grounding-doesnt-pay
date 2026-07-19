@@ -1,0 +1,191 @@
+[
+  {
+    "variant": "baseline",
+    "backend": "sentence-transformers",
+    "detail": "sentence-transformers/all-MiniLM-L6-v2",
+    "clusters_agg": {
+      "C1": 99,
+      "C2": 145,
+      "C7-proxy": 161
+    },
+    "clusters_hdb": {
+      "C1": 11,
+      "C2": 2,
+      "C7-proxy": 9
+    },
+    "per1k_agg": {
+      "C1": 5.263,
+      "C2": 7.601,
+      "C7-proxy": 1.263
+    },
+    "per1k_hdb": {
+      "C1": 0.585,
+      "C2": 0.105,
+      "C7-proxy": 0.071
+    },
+    "cos_dist": {
+      "C1": 0.606,
+      "C2": 0.593,
+      "C7-proxy": 0.681
+    },
+    "rho": {
+      "C1": null,
+      "C2": -0.0124,
+      "C7-proxy": -0.0144
+    },
+    "C7_last_tokens_agg": true,
+    "C7_last_tokens_hdb": true,
+    "C7vsC1_tok_agg": [
+      -2.894,
+      -3.286,
+      -2.502
+    ],
+    "C7vsC1_tok_hdb": [
+      -0.511,
+      -0.522,
+      -0.461
+    ],
+    "C7vsC2_prop_agg": [
+      0.045,
+      -0.017,
+      0.111
+    ],
+    "C7vsC2_prop_hdb": [
+      0.038,
+      0.033,
+      0.044
+    ],
+    "C7vsC1_prop_agg": [
+      0.194,
+      0.133,
+      0.256
+    ],
+    "ordering_invariant": false
+  },
+  {
+    "variant": "multilingual",
+    "backend": "sentence-transformers",
+    "detail": "sentence-transformers/paraphrase-multilingual-Mi",
+    "clusters_agg": {
+      "C1": 66,
+      "C2": 109,
+      "C7-proxy": 141
+    },
+    "clusters_hdb": {
+      "C1": 7,
+      "C2": 2,
+      "C7-proxy": 2
+    },
+    "per1k_agg": {
+      "C1": 3.509,
+      "C2": 5.714,
+      "C7-proxy": 1.106
+    },
+    "per1k_hdb": {
+      "C1": 0.372,
+      "C2": 0.105,
+      "C7-proxy": 0.016
+    },
+    "cos_dist": {
+      "C1": 0.593,
+      "C2": 0.665,
+      "C7-proxy": 0.66
+    },
+    "rho": {
+      "C1": null,
+      "C2": 0.0042,
+      "C7-proxy": -0.0117
+    },
+    "C7_last_tokens_agg": true,
+    "C7_last_tokens_hdb": true,
+    "C7vsC1_tok_agg": [
+      -1.858,
+      -2.171,
+      -1.539
+    ],
+    "C7vsC1_tok_hdb": [
+      -0.353,
+      -0.364,
+      -0.303
+    ],
+    "C7vsC2_prop_agg": [
+      0.104,
+      0.044,
+      0.167
+    ],
+    "C7vsC2_prop_hdb": [
+      0.0,
+      -0.006,
+      0.006
+    ],
+    "C7vsC1_prop_agg": [
+      0.26,
+      0.206,
+      0.317
+    ],
+    "ordering_invariant": false
+  },
+  {
+    "variant": "minstop",
+    "backend": "sentence-transformers",
+    "detail": "sentence-transformers/all-MiniLM-L6-v2",
+    "clusters_agg": {
+      "C1": 99,
+      "C2": 146,
+      "C7-proxy": 161
+    },
+    "clusters_hdb": {
+      "C1": 11,
+      "C2": 2,
+      "C7-proxy": 9
+    },
+    "per1k_agg": {
+      "C1": 5.263,
+      "C2": 7.654,
+      "C7-proxy": 1.263
+    },
+    "per1k_hdb": {
+      "C1": 0.585,
+      "C2": 0.105,
+      "C7-proxy": 0.071
+    },
+    "cos_dist": {
+      "C1": 0.606,
+      "C2": 0.594,
+      "C7-proxy": 0.681
+    },
+    "rho": {
+      "C1": null,
+      "C2": -0.0105,
+      "C7-proxy": -0.0144
+    },
+    "C7_last_tokens_agg": true,
+    "C7_last_tokens_hdb": true,
+    "C7vsC1_tok_agg": [
+      -2.894,
+      -3.286,
+      -2.502
+    ],
+    "C7vsC1_tok_hdb": [
+      -0.51,
+      -0.522,
+      -0.461
+    ],
+    "C7vsC2_prop_agg": [
+      0.044,
+      -0.022,
+      0.106
+    ],
+    "C7vsC2_prop_hdb": [
+      0.039,
+      0.033,
+      0.044
+    ],
+    "C7vsC1_prop_agg": [
+      0.194,
+      0.133,
+      0.256
+    ],
+    "ordering_invariant": false
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "title": "Grounding Doesn't Pay: A Token-Matched Negative Result on Creative Diversity — paper + replication package",
+  "description": "A pre-registered, judge-free, token-matched pilot on multi-agent creative diversity. In-context domain grounding helps per proposal (it beats plain repeated sampling by +0.19 to +0.26 clusters per idea, across two encoders) but is never the token-efficient frontier: a cheap arm always dominates it per token, under both pre-registered clustering algorithms and both encoders, because a 6.8x token cost cannot be amortized by an at-most-1.8x achievable cluster gain. Ships the frozen generation (180 records, SHA-256 per record), the pre-registered scorer, encoder/stopword robustness re-scores, both figures from code, a stdlib paper<->data test, and a Merkle-tree + hash-chain provenance seal (scripts/verify_chain.py) that makes tampering evident and re-ties every generation hash to its content. Single model family (Grok-4.20), two creative queries. Paper in English.",
+  "creators": [
+    {
+      "name": "Flores, Carlos Ulisses",
+      "affiliation": "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil",
+      "orcid": "0000-0002-6034-7765"
+    }
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "keywords": [
+    "token-efficient diversity",
+    "multi-agent generation",
+    "negative result",
+    "pre-registration",
+    "embedding clustering",
+    "budget-matched accounting",
+    "encoder robustness",
+    "hash chain provenance"
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/ulissesflores/grounding-doesnt-pay",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Dual licensing: source code under Apache-2.0 (deposit license); paper text and figures under CC BY 4.0. The Zenodo Version DOI of this deposit anchors the provenance artifact_root recorded in PROVENANCE.json."
+}

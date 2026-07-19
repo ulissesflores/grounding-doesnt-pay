@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grounding-doesnt-pay"
+version = "0.1.0"
+description = "Replication package for 'Grounding Doesn't Pay: A Token-Matched Negative Result on Creative Diversity'"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+keywords = [
+    "token-efficient diversity", "multi-agent generation", "negative result",
+    "pre-registration", "embedding clustering", "budget-matched accounting",
+]
+authors = [{ name = "Carlos Ulisses Flores" }]
+
+# Track 1 (verify + figures). Track 2 (re-derive scores) is the [full] extra.
+dependencies = ["matplotlib>=3.8"]
+
+[project.optional-dependencies]
+full = [
+    "numpy==2.4.6", "scipy==1.17.1", "scikit-learn==1.9.0",
+    "joblib==1.5.3", "threadpoolctl==3.6.0", "sentence-transformers>=2.2,<4",
+]
+dev = ["ruff>=0.6", "pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/ulissesflores/grounding-doesnt-pay"
+
+[tool.setuptools]
+# Not a library — the scripts run from the checkout (python run_all.py). This
+# section only makes metadata installable; py-modules keeps setuptools happy.
+py-modules = ["run_all"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]  # long lines in data-heavy tables/docstrings are intentional
+
+[tool.ruff.lint.per-file-ignores]
+# sys.path.insert to import sibling modules from the checkout, and the
+# SOURCE_DATE_EPOCH set that must precede `import matplotlib` — both intentional.
+"code/*.py" = ["E402"]
+"scripts/make_figures.py" = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

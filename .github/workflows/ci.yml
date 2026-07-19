@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    name: verify integrity + paper numbers
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Track 1 deps
+        run: pip install -r requirements.txt
+      - name: Verify the provenance chain (tamper-evidence)
+        run: python scripts/verify_chain.py
+      - name: Check every paper number against the frozen data
+        run: python tests/test_paper_numbers.py
+      - name: Regenerate figures from the locked scores
+        run: python scripts/make_figures.py
+
+  lint:
+    name: ruff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff
+      - run: ruff check .

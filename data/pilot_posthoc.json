@@ -1,0 +1,156 @@
+{
+  "note": "POST-HOC EXPLORATORY — NOT pre-registered. The gate decision is from score_pilot.py only. These views answer reviewer robustness questions on already-collected data.",
+  "n_records": 180,
+  "per_query": {
+    "aut_brick": {
+      "n_records": 90,
+      "clusters_per_1k_input_tok_agg": {
+        "C1": 6.329113924050633,
+        "C2": 7.906783187682064,
+        "C7-proxy": 1.251742933198124
+      },
+      "C7_is_last_tokens_matched": true,
+      "boot_C7_vs_C1_input_tokens": {
+        "mean_diff": -3.542094908094537,
+        "ci_low": -4.118029002622356,
+        "ci_high": -2.9576914498797393,
+        "denom_a": 63.112,
+        "denom_b": 9.48
+      },
+      "verdict": "AMPUTATE-consistent"
+    },
+    "water_compartment": {
+      "n_records": 90,
+      "clusters_per_1k_input_tok_agg": {
+        "C1": 4.394426580921758,
+        "C2": 7.819103972950127,
+        "C7-proxy": 1.3518132943845365
+      },
+      "C7_is_last_tokens_matched": true,
+      "boot_C7_vs_C1_input_tokens": {
+        "mean_diff": -2.2864791098373325,
+        "ci_low": -2.7895640166889346,
+        "ci_high": -1.748828823175507,
+        "denom_a": 64.358,
+        "denom_b": 9.33
+      },
+      "verdict": "AMPUTATE-consistent"
+    }
+  },
+  "budget_unit_robustness": {
+    "algorithm": "agglomerative",
+    "contrasts": {
+      "C7-proxy_vs_C1": {
+        "per_1k_input_tok": {
+          "point": {
+            "clusters_a": 161,
+            "clusters_b": 99,
+            "cluster_ratio_a_over_b": 1.6262626262626263,
+            "budget_ratio_a_over_b": 6.776714513556619
+          },
+          "boot": {
+            "mean_diff": -2.8937612477602075,
+            "ci_low": -3.283782317858448,
+            "ci_high": -2.4959308059975713,
+            "denom_a": 127.47,
+            "denom_b": 18.81
+          }
+        },
+        "per_1k_total_tok": {
+          "point": {
+            "clusters_a": 161,
+            "clusters_b": 99,
+            "cluster_ratio_a_over_b": 1.6262626262626263,
+            "budget_ratio_a_over_b": 5.2358124369226
+          },
+          "boot": {
+            "mean_diff": -1.9362963710598131,
+            "ci_low": -2.223536680921656,
+            "ci_high": -1.6447802463292711,
+            "denom_a": 134.885,
+            "denom_b": 25.762
+          }
+        },
+        "per_usd": {
+          "point": {
+            "clusters_a": 161,
+            "clusters_b": 99,
+            "cluster_ratio_a_over_b": 1.6262626262626263,
+            "budget_ratio_a_over_b": 4.3498196490799055
+          },
+          "boot": {
+            "mean_diff": -1120.2089144226645,
+            "ci_low": -1301.9608901198749,
+            "ci_high": -935.1454594174234,
+            "denom_a": 0.17787500000000006,
+            "denom_b": 0.040892500000000005
+          }
+        }
+      },
+      "C7-proxy_vs_C2": {
+        "per_1k_input_tok": {
+          "point": {
+            "clusters_a": 161,
+            "clusters_b": 145,
+            "cluster_ratio_a_over_b": 1.110344827586207,
+            "budget_ratio_a_over_b": 6.68221849444328
+          },
+          "boot": {
+            "mean_diff": -4.245223098390647,
+            "ci_low": -4.680575366098253,
+            "ci_high": -3.810445171455651,
+            "denom_a": 127.47,
+            "denom_b": 19.076
+          }
+        },
+        "per_1k_total_tok": {
+          "point": {
+            "clusters_a": 161,
+            "clusters_b": 145,
+            "cluster_ratio_a_over_b": 1.110344827586207,
+            "budget_ratio_a_over_b": 5.2510997780978705
+          },
+          "boot": {
+            "mean_diff": -2.9863318821342064,
+            "ci_low": -3.3147820508001518,
+            "ci_high": -2.6622439891211966,
+            "denom_a": 134.885,
+            "denom_b": 25.687
+          }
+        },
+        "per_usd": {
+          "point": {
+            "clusters_a": 161,
+            "clusters_b": 145,
+            "cluster_ratio_a_over_b": 1.110344827586207,
+            "budget_ratio_a_over_b": 4.405845563192768
+          },
+          "boot": {
+            "mean_diff": -1805.2671418010082,
+            "ci_low": -2013.848921935557,
+            "ci_high": -1597.3029100444483,
+            "denom_a": 0.17787500000000006,
+            "denom_b": 0.040372500000000006
+          }
+        }
+      }
+    }
+  },
+  "C2_vs_C1": {
+    "algorithm": "agglomerative",
+    "proposals_matched": {
+      "mean_diff": 0.14853055555555555,
+      "ci_low": 0.0888888888888889,
+      "ci_high": 0.21111111111111108,
+      "denom_a": 180,
+      "denom_b": 180
+    },
+    "tokens_matched_per_1k": {
+      "mean_diff": 1.3497162016474238,
+      "ci_low": 0.7831512864014436,
+      "ci_high": 1.9416221345346947,
+      "denom_a": 19.076,
+      "denom_b": 18.81
+    }
+  }
+}

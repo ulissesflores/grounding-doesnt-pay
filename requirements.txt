@@ -1,0 +1,3 @@
+# Track 1 — verify paper<->data and regenerate figures.
+# tests/test_paper_numbers.py needs only the standard library; matplotlib is for figures.
+matplotlib>=3.8

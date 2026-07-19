@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "scored_at": "2026-07-17T04:18:39.646849+00:00",
+    "n_records": 180,
+    "embedding_backend": "sentence-transformers",
+    "embedding_detail": "sentence-transformers/all-MiniLM-L6-v2",
+    "domain_blind_stopwords": [
+      "absurdista",
+      "alquimista",
+      "anarquista",
+      "area",
+      "arquiteto",
+      "artista",
+      "aventureiro",
+      "biomimetica",
+      "biomimetico",
+      "burocrata",
+      "campo",
+      "caos",
+      "cartografo",
+      "cetico",
+      "cientista",
+      "comediante",
+      "contrabandista",
+      "dominio",
+      "economista",
+      "engenheiro",
+      "estrategista",
+      "filosofo",
+      "generic",
+      "guardiao",
+      "hacker",
+      "humano",
+      "iconoclasta",
+      "ideias",
+      "improvavel",
+      "improvisador",
+      "incisus",
+      "individualista",
+      "maximalista",
+      "minimalista",
+      "modo",
+      "mutator",
+      "nomade",
+      "nostalgico",
+      "ordem",
+      "otimista",
+      "perfeccionista",
+      "persona",
+      "pessimista",
+      "poeta",
+      "pragmatico",
+      "provocador",
+      "purista",
+      "radical",
+      "realista",
+      "rebelde",
+      "romantico",
+      "sem",
+      "silenus",
+      "spec",
+      "style",
+      "substrato",
+      "theoros",
+      "tradicionalista",
+      "utilitarista",
+      "vates",
+      "visionario"
+    ],
+    "clustering": {
+      "algorithms": [
+        "hdbscan",
+        "agglomerative"
+      ],
+      "hdbscan_min_cluster_size": 3,
+      "agglomerative_metric": "cosine",
+      "agglomerative_linkage": "average",
+      "agglomerative_distance_threshold": 0.35,
+      "per_arm": true,
+      "validity_rule": "ordenacao dos bracos deve ser invariante entre os dois algoritmos"
+    },
+    "bootstrap_resamples": 10000
+  },
+  "arms": [
+    "C1",
+    "C2",
+    "C7-proxy"
+  ],
+  "metrics": {
+    "C1": {
+      "n_ideas": 180,
+      "raw_ideas": 180,
+      "input_tokens": 18810,
+      "n_source_identities": 1,
+      "clusters": {
+        "hdbscan": 11,
+        "agglomerative": 99
+      },
+      "clusters_per_idea": {
+        "hdbscan": 0.06111111111111111,
+        "agglomerative": 0.55
+      },
+      "clusters_per_1k_input_tokens": {
+        "hdbscan": 0.584795321637427,
+        "agglomerative": 5.2631578947368425
+      },
+      "mean_pairwise_cosine_distance": 0.6055832868310336,
+      "fluency_n_ideas": 180,
+      "rho": null
+    },
+    "C2": {
+      "n_ideas": 180,
+      "raw_ideas": 180,
+      "input_tokens": 19076,
+      "n_source_identities": 39,
+      "clusters": {
+        "hdbscan": 2,
+        "agglomerative": 146
+      },
+      "clusters_per_idea": {
+        "hdbscan": 0.011111111111111112,
+        "agglomerative": 0.8111111111111111
+      },
+      "clusters_per_1k_input_tokens": {
+        "hdbscan": 0.10484378276368211,
+        "agglomerative": 7.653596141748794
+      },
+      "mean_pairwise_cosine_distance": 0.5937895948660131,
+      "fluency_n_ideas": 180,
+      "rho": -0.010451956128994192
+    },
+    "C7-proxy": {
+      "n_ideas": 180,
+      "raw_ideas": 180,
+      "input_tokens": 127470,
+      "n_source_identities": 53,
+      "clusters": {
+        "hdbscan": 9,
+        "agglomerative": 161
+      },
+      "clusters_per_idea": {
+        "hdbscan": 0.05,
+        "agglomerative": 0.8944444444444445
+      },
+      "clusters_per_1k_input_tokens": {
+        "hdbscan": 0.07060484819957637,
+        "agglomerative": 1.2630422844590885
+      },
+      "mean_pairwise_cosine_distance": 0.6806855185020446,
+      "fluency_n_ideas": 180,
+      "rho": -0.014360447073886376
+    }
+  },
+  "ordering": {
+    "hdbscan": [
+      "C1",
+      "C7-proxy",
+      "C2"
+    ],
+    "agglomerative": [
+      "C7-proxy",
+      "C2",
+      "C1"
+    ],
+    "invariant": false
+  },
+  "bootstrap_diff": {
+    "C7-proxy_vs_C1": {
+      "hdbscan": {
+        "proposals_matched": {
+          "mean_diff": -0.011217222222222215,
+          "ci_low": -0.016666666666666663,
+          "ci_high": -0.00555555555555555
+        },
+        "tokens_matched": {
+          "mean_diff": -0.5101438447098728,
+          "ci_low": -0.5220354565711369,
+          "ci_high": -0.46102726237990266
+        }
+      },
+      "agglomerative": {
+        "proposals_matched": {
+          "mean_diff": 0.19375722222222222,
+          "ci_low": 0.13333333333333336,
+          "ci_high": 0.25555555555555554
+        },
+        "tokens_matched": {
+          "mean_diff": -2.8935917961245288,
+          "ci_low": -3.285533988733503,
+          "ci_high": -2.502024118255801
+        }
+      }
+    },
+    "C7-proxy_vs_C2": {
+      "hdbscan": {
+        "proposals_matched": {
+          "mean_diff": 0.03851833333333333,
+          "ci_low": 0.03333333333333333,
+          "ci_high": 0.044444444444444446
+        },
+        "tokens_matched": {
+          "mean_diff": -0.032756234067910985,
+          "ci_low": -0.042083917697392004,
+          "ci_high": 0.01818295681773531
+        }
+      },
+      "agglomerative": {
+        "proposals_matched": {
+          "mean_diff": 0.043677777777777774,
+          "ci_low": -0.022222222222222143,
+          "ci_high": 0.10555555555555562
+        },
+        "tokens_matched": {
+          "mean_diff": -4.25792322108921,
+          "ci_low": -4.680575366098253,
+          "ci_high": -3.83398012085551
+        }
+      }
+    }
+  },
+  "gate": {
+    "decision_view": "tokens_matched",
+    "algorithm": "agglomerative",
+    "ordering_invariant": false,
+    "c7_vs_c1_tokens": {
+      "mean_diff": -2.8935917961245288,
+      "ci_low": -3.285533988733503,
+      "ci_high": -2.502024118255801
+    },
+    "c7_vs_c2_tokens": {
+      "mean_diff": -4.25792322108921,
+      "ci_low": -4.680575366098253,
+      "ci_high": -3.83398012085551
+    },
+    "decision": "AMPUTATE",
+    "reading": "C7-proxy does NOT beat C1 on tokens-matched (bootstrap CI of the difference lies entirely below 0 -> C7-proxy is strictly WORSE than C1). Structural coupling confirmed -> amputation validated: DO NOT build the Cupula; report the null.",
+    "caveat": "Validity requires ordering invariance across HDBSCAN and Agglomerative; if False, treat the reading as provisional."
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "provenance_version": "1.1",
+  "algorithm": "sha256",
+  "paper": "Grounding Doesn't Pay: A Token-Matched Negative Result on Creative Diversity",
+  "semantics": {
+    "generation": "frozen evidence — immutable, not bit-reproducible (LLM API @ T=0.9); the chain proves the records were not altered, not that they regenerate",
+    "derivation": "reproducible — scores re-derive from the frozen generation under the declared reproduction environment (exact cluster counts depend on the sklearn/sentence-transformers pins; signs, orderings and CIs are robust)",
+    "artifact_root": "portable, machine-independent tamper-evidence over code + preregistration + generation + scores + paper; anchored by the Zenodo Version DOI",
+    "figures": "NOT in artifact_root — reproducible derivation, byte-variable across matplotlib versions; the published figures are fixed inside the sealed paper PDF"
+  },
+  "reproduction_environment": {
+    "declared_requirements": [
+      "requirements.txt",
+      "requirements-full.txt"
+    ],
+    "note": "scores are frozen evidence from an earlier session; reproduction runs under these declared pins. sentence-transformers/all-MiniLM-L6-v2 reproduces the exact numbers; a TF-IDF fallback (no torch) reproduces the verdict (the null)."
+  },
+  "sealed_by_interpreter": {
+    "python": "3.14.6",
+    "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "sha256": "5be563dfe0e4ad464e40dda2f3609a4d62947ebda35d49c1e190c211628572bc",
+    "note": "metadata about the signing interpreter only; NOT the environment of derivation and NOT folded into artifact_root"
+  },
+  "derived_artifacts_not_sealed": {
+    "output/figures/fig1_clusters_per_1k.png": "0fe9dfcd9ba639072b84c6ee8c9dd49cc1665ff9d7e241e5211c6c3ad105b872",
+    "output/figures/fig2_caching_breakeven.png": "8355005b9457bd4210887ba2ee98f602353ffd0ae0e1ad97b3437184549dd884"
+  },
+  "stages": [
+    {
+      "name": "code",
+      "kind": "derivation-input",
+      "merkle_root": "be2e9994875ff1fe0ae3883b550911865bee1c11110366551bfdb564245297d0",
+      "leaves": {
+        "code/pilot_common.py": "f3a27bb21cd4b2439c1702f07654fce72e6e69fb001610ef72a322894f793d4a",
+        "code/pilot_config.json": "b6ff8dc8f68e16e1d1b51380bf7fd76668ea751879bcd8f506f22a5d0e960c0d",
+        "code/posthoc_analysis.py": "aefe04c302b71ca3ef1036f5da8a8a28bc65c28e815fae8e2f8fbdb4fc2e98c1",
+        "code/run_pilot_c1c7.py": "4d74c039f0127ddfd079714e539c286eba4246c91bb22ed03f9afece2cb6492f",
+        "code/score_pilot.py": "bced0723d5c9ab2fd75c4814065e1ef6dc58749c81a04828d5e9c05c6809117a",
+        "scripts/build_chain.py": "6aa852b1a3200e70774c5411eee1e2c6434da3baa638122f3f1e633a072f183f",
+        "scripts/hash_utils.py": "01f497e825d71adb229b5bfcd0c3b885dd300e57d187748634cceb7a0530a9e2",
+        "scripts/make_figures.py": "62c94b731049621cb4e8a969b9170c42656f04b067acbf5d4ead4f77198f35da",
+        "scripts/rescore_robustness.py": "e0f01a5e404f9a7aeba3ed0130588ffc2148dc3eddd30c9c55d273024a37e6cf",
+        "scripts/verify_chain.py": "f1d1f25785bce89d1f98b4067329d4ece808f30e5d8c99f04f962721cd852778",
+        "tests/test_paper_numbers.py": "4203410c8402c42962aad9424f4f36dc9ef390e2fe5853cfefded80a68b3c323"
+      },
+      "hash": "be2e9994875ff1fe0ae3883b550911865bee1c11110366551bfdb564245297d0",
+      "chain_link": "d85de353457c0bbacafcbe6765e8258d9dd78fa12e4feedff0b0ce73639dc4c4"
+    },
+    {
+      "name": "preregistration",
+      "kind": "frozen-before-collection",
+      "merkle_root": "1093c8537ae35313785f8e3282fa8a8f8c2bb62473d372ed67ad4ded89e16188",
+      "leaves": {
+        "data/PREREGISTRATION.md": "1093c8537ae35313785f8e3282fa8a8f8c2bb62473d372ed67ad4ded89e16188"
+      },
+      "hash": "1093c8537ae35313785f8e3282fa8a8f8c2bb62473d372ed67ad4ded89e16188",
+      "chain_link": "b53c32d1fcb585a683660b5313d44084d80184d88c994e0667fded7dc2af44d1"
+    },
+    {
+      "name": "generation",
+      "kind": "frozen-evidence",
+      "note": "LLM output (Grok-4.20 @ T=0.9) — immutable, NOT bit-reproducible; chain proves no tampering, not regeneration",
+      "file_sha256": "51f0fcce3ce8250d28d2c1101d10eccf9524bdf79a032d582ab83b4d438606fb",
+      "n_records": 180,
+      "record_merkle_root": "3adc43682e01c4d3c96f19481a0647b38a20a680955ff9a37ce9ac5b9f46d97c",
+      "records_reverified": true,
+      "record_hash_mismatches": [],
+      "hash": "2c16a2adb986cc0003eebad4cedb37e8287f96d4b216e562c9625e659a38e4b5",
+      "chain_link": "0501f82e205c0b2e07b2272252a0cb918b2bcfd148046bfd05df4249a767b17a"
+    },
+    {
+      "name": "scores",
+      "kind": "reproducible-derivation",
+      "merkle_root": "6f50cc9cc074c74aac9f78b2752311dfa5160098cf1d0ce966253e3724ee2c47",
+      "leaves": {
+        "data/pilot_posthoc.json": "bfaccfe77f2c848654385f2dbc65c2008902141b4b42a90b149598f15b42d3b0",
+        "data/pilot_report.md": "8b5568507daae01f7772c3599829f3df122095b93908452689a87c4096ac0821",
+        "data/pilot_scores.json": "d62d9171556c1db0be53c3b1ce58681ce44c1be0efdede5320ef38780f2abcf2",
+        "data/robustness/ROBUSTNESS-FINDINGS.md": "99eca7289e48aaaf62d831ca69fd62f8bf4970d73d4e42c980e5fdf1af986c12",
+        "data/robustness/rescore_baseline.json": "d4eab8e7b6e3d1948cbd88cb02dfdd02cf53e065e160d81f6060673fd516278f",
+        "data/robustness/rescore_minstop.json": "27c5f7055718e8c43ee12046075bb7b51549f84b50217430ea45e697652dd020",
+        "data/robustness/rescore_multilingual.json": "b42ad914685725a84db369aaea6ba1a9706922d0499f6318af5ef1648c8dda88",
+        "data/robustness/rescore_summary.json": "ddb60988782a85c8a6e76b1acb4c74d047080e645cb2d696183418651265aec3"
+      },
+      "hash": "6f50cc9cc074c74aac9f78b2752311dfa5160098cf1d0ce966253e3724ee2c47",
+      "chain_link": "ff7d9943c10964c562286dafad26c121408b86c4d335dbab173cfbedf3fcd779"
+    },
+    {
+      "name": "paper",
+      "kind": "artifact",
+      "merkle_root": "b02c999daac74aedece97b7b8074903d74c21474698e9fae8a58cd215be1d1a9",
+      "leaves": {
+        "docs/paper/paper-final.docx": "3201ab46b959f499e3a3ac91575ef6bae5f6f81d8cbc0bdc8eaef82387d5c794",
+        "docs/paper/paper-final.pdf": "5884fe4bd2545d925435aa1a5b7f3acbcf877517336dbbaab2fbf1dbd84e29e6"
+      },
+      "hash": "b02c999daac74aedece97b7b8074903d74c21474698e9fae8a58cd215be1d1a9",
+      "chain_link": "2eaeab3472ae309a49bf0369b06c87bcec317349f4bd2f1f547b9f1344a11d14"
+    }
+  ],
+  "chain_order": [
+    "code",
+    "preregistration",
+    "generation",
+    "scores",
+    "paper"
+  ],
+  "artifact_root": "2eaeab3472ae309a49bf0369b06c87bcec317349f4bd2f1f547b9f1344a11d14",
+  "doi_anchor": "set at release: the Zenodo Version DOI binds this artifact_root"
+}

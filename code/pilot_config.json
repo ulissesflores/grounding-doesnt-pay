@@ -1,0 +1,148 @@
+{
+  "preregistration": "data/PREREGISTRATION.md",
+  "description": "Frozen parameters for the pre-registered C1-vs-C2-vs-C7-proxy generation-stage pilot. Nothing here may change after the first real record is collected.",
+  "seed": 42,
+
+  "amendment_2026_07_08": {
+    "what": "Generation model M swapped: Cerebras qwen-3-235b -> OpenRouter x-ai/grok-4.20 (reasoning DISABLED).",
+    "why": "(1) The pre-registered Cerebras key returned 401 'Wrong API Key' and the Split OpenRouter key is also dead (401 'User not found'), so the original M was unreachable. (2) STATE.md decisao-travada already fixed the experiment run to the Grok-4.20 run recorded in the project state; this amendment realigns the pilot with that lock. (3) Grok-4.20 non-reasoning is faster/cheaper and avoids chain-of-thought contaminating the diversity measure.",
+    "legitimacy": "This is a pre-collection amendment: NO real generation record had been written when it was made (the generation smoke never crossed the auth wall; only the scoring smoke ran on mock data). Internal validity is preserved because all three arms (C1/C2/C7-proxy) still share the SAME model M, temperature, max_tokens, ideas_per_call and query text; only the system-prompt conditioning differs. External generality is now Grok-specific (was Qwen-specific).",
+    "access": "M is reached via OpenRouter (x-ai/grok-4.20, non-reasoning); the API key was read from the OPENROUTER_API_KEY environment variable. Verified reachable 2026-07-08 (returned x-ai/grok-4.20-20260309, reasoning empty).",
+    "unchanged": "seed, temperature, N, arms, queries, prompts, scoring, gate_rule — all identical to the original pre-registration."
+  },
+
+  "generation": {
+    "provider": "openrouter",
+    "model": "grok-4.20",
+    "model_api_id": "x-ai/grok-4.20",
+    "reasoning": {"enabled": false},
+    "temperature": 0.9,
+    "max_tokens": 1024,
+    "ideas_per_call": 3,
+    "n_ideas_per_arm_per_query": 90,
+    "calls_per_arm_per_query": 30,
+    "smoke_calls_per_arm": 2,
+    "arms": ["C1", "C2", "C7-proxy"],
+    "queries_order": ["aut_brick", "water_compartment"],
+    "total_calls_full": 180,
+    "independent_generation": true,
+    "notes": "M = OpenRouter x-ai/grok-4.20 with reasoning DISABLED (non-reasoning, fast). OpenRouter does not accept a sampling seed here, so SEED governs identity sampling + call order only (pre-registration allows this: 'seed onde o provider permitir; senao, fixar N e ordem'). All arms share the same model, temperature, max_tokens, ideas_per_call and query text; only the system-prompt conditioning differs. See amendment_2026_07_08."
+  },
+
+  "queries": {
+    "aut_brick": {
+      "label": "AUT brick (Alternate Uses Task)",
+      "object": "tijolo comum de construcao (brick)",
+      "brief": "Liste usos alternativos, criativos e incomuns para um tijolo comum de construcao (brick). Fuja do obvio; busque usos que ninguem pensaria."
+    },
+    "water_compartment": {
+      "label": "Design funcional 004",
+      "object": "compartimento para 500ml de agua mineral",
+      "brief": "Projete um compartimento para armazenar 500ml de agua mineral. Proponha solucoes de design distintas e criativas para o compartimento."
+    }
+  },
+
+  "prompts": {
+    "user_template": "{brief}\n\nResponda com EXATAMENTE 3 ideias, uma por linha, numeradas de 1 a 3. Cada linha deve ser uma unica proposicao atomica, distinta das outras, sem sub-itens, sem preambulo e sem conclusao. Nao repita a pergunta.",
+    "c1_system": "Voce e um gerador criativo. Produza ideias originais, variadas e inesperadas. Nao assuma nenhuma persona nem area de especialidade.",
+    "c2_system_template": "Voce encara qualquer problema no estilo de {style}. Gere ideias fieis a esse estilo. Voce nao tem nenhum conhecimento tecnico especializado; apenas essa postura estilistica.",
+    "c7_system_template": "Voce NAO defende nada e NAO tem gosto pessoal. Voce E o seguinte conhecimento de dominio aterrado, e deve aplicar a operacao cognitiva da sua persona ao problema, reportando o que o conhecimento revela (inclusive quando revela que o dominio e irrelevante). Sem memoria entre interacoes.\n\n===== SUBSTRATO DE DOMINIO (texto integral) =====\nDOMINIO: {domain} | MODO: {mode} | PERSONA: {persona}\n\n{spec}\n===== FIM DO SUBSTRATO ====="
+  },
+
+  "arms": {
+    "C1": {
+      "conditioning": "self-consistency",
+      "isolates": "baseline de escala pura (so a temperatura decorrelaciona)"
+    },
+    "C2": {
+      "conditioning": "style-persona (rotulo de estilo, SEM substrato de conhecimento)",
+      "isolates": "o confound 'dominio = persona-prompt'",
+      "style_personas": [
+        "o contrario", "o visionario", "o minimalista", "o cetico", "o maximalista",
+        "o pragmatico", "o radical", "o conservador", "o poeta", "o engenheiro sem area",
+        "o provocador", "o otimista", "o pessimista", "o rebelde", "o tradicionalista",
+        "o futurista", "o nostalgico", "o iconoclasta", "o purista", "o improvisador",
+        "o perfeccionista", "o anarquista", "o burocrata", "o artista", "o cientista sem campo",
+        "o filosofo", "o comediante", "o estrategista", "o aventureiro", "o eremita",
+        "o coletivista", "o individualista", "o utilitarista", "o romantico", "o realista",
+        "o surrealista", "o absurdista", "o economista", "o hacker", "o artesao",
+        "o nomade", "o arquiteto do caos", "o guardiao da ordem", "o contrabandista de ideias",
+        "o alquimista", "o cartografo do improvavel"
+      ]
+    },
+    "C7-proxy": {
+      "conditioning": "domain (spec real completo: dominio x modo x persona)",
+      "isolates": "o tratamento: substrato epistemico aterrado",
+      "domains_root": "arcabouco",
+      "modes": ["humano", "biomimetico"],
+      "personas": ["THEOROS", "INCISUS", "MUTATOR", "VATES", "SILENUS"],
+      "spec_filenames": {
+        "humano": "specs-humano.md",
+        "biomimetico": "specs-biomimetico.md"
+      },
+      "note": "Dominios sao DESCOBERTOS dinamicamente: so entram os que tem specs-humano.md E specs-biomimetico.md. No momento do build, 10 dominios (01-10) qualificam; dominio-16 tem apenas 00-termos-babelfish.md e NAO qualifica. 10 dominios x 2 modos x 5 personas = 100 identidades disponiveis, suficiente para amostrar 30 distintas por query."
+    }
+  },
+
+  "scoring": {
+    "atomic_extraction": {
+      "one_proposition_per_line": true,
+      "min_chars": 3,
+      "strip_list_markers": true,
+      "exact_dedup": true
+    },
+    "embedding": {
+      "primary_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "fallback": "tfidf-sklearn",
+      "normalize": true,
+      "load_timeout_seconds": 120,
+      "domain_blind": {
+        "enabled": true,
+        "lowercase": true,
+        "strip_source_vocabulary": true,
+        "note": "Remove os nomes-proprios semeados (nome do dominio, nome da persona, palavras de modo) antes de embeddar, para nao medir a semeadura em vez da ideia.",
+        "extra_stopwords": ["theoros", "incisus", "mutator", "vates", "silenus", "humano", "biomimetico", "biomimetica", "dominio", "persona", "spec", "substrato"]
+      }
+    },
+    "clustering": {
+      "algorithms": ["hdbscan", "agglomerative"],
+      "hdbscan_min_cluster_size": 3,
+      "agglomerative_metric": "cosine",
+      "agglomerative_linkage": "average",
+      "agglomerative_distance_threshold": 0.35,
+      "per_arm": true,
+      "validity_rule": "ordenacao dos bracos deve ser invariante entre os dois algoritmos"
+    },
+    "primary_dv": "clusters_per_idea",
+    "budget_views": {
+      "proposals_matched": "clusters_per_idea (mesmo N por braco)",
+      "tokens_matched": "clusters_per_1k_input_tokens (a DECISIVA)"
+    },
+    "secondary_metrics": ["n_clusters_raw", "mean_pairwise_cosine_distance", "fluency_n_ideas"],
+    "rho": {
+      "definition": "correlacao media par-a-par da cobertura-de-cluster entre identidades-fonte por braco (baixo = descorrelacao funcionando)",
+      "clustering_used": "agglomerative"
+    },
+    "bootstrap": {
+      "resamples": 10000,
+      "statistic": "clusters_per_idea",
+      "contrasts": [["C7-proxy", "C1"], ["C7-proxy", "C2"]],
+      "ci": 0.95,
+      "seed": 42
+    }
+  },
+
+  "gate_rule": {
+    "primary_decision_view": "tokens_matched",
+    "amputate": "C7-proxy NAO supera C1 (tokens-casados, alem do IC bootstrap) -> structural coupling confirmado -> NAO construir a Cupula; reportar o null.",
+    "proceed": "C7-proxy > C1 (tokens-casados) E C7-proxy > C2 -> dominio bate estilo E escala -> prosseguir para ablacao estreita.",
+    "persona_not_domain": "C7-proxy > C1 mas C7-proxy ~= C2 -> e persona/estilo, nao dominio -> tese domain-specific cai (publicar como negativo)."
+  },
+
+  "artifacts": {
+    "generation_jsonl": "results/pilot_gen_{mode}.jsonl",
+    "scores_json": "results/pilot_scores.json",
+    "report_md": "results/pilot_report.md",
+    "hash_per_record": "sha256(system_prompt + user_prompt + output_text)"
+  }
+}

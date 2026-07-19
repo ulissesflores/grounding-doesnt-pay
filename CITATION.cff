@@ -1,0 +1,32 @@
+# version / date-released / doi are minted with the Zenodo release; until then the
+# BibTeX in README.md and this file cite the software by title + repository.
+cff-version: 1.2.0
+message: "If you use this replication package or cite the paper, please use the metadata below."
+title: "Grounding Doesn't Pay — replication package"
+type: software
+version: "0.1.0"
+repository-code: "https://github.com/ulissesflores/grounding-doesnt-pay"
+authors:
+  - family-names: "Flores"
+    given-names: "Carlos Ulisses"
+    orcid: "https://orcid.org/0000-0002-6034-7765"
+    affiliation: "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
+license: Apache-2.0
+keywords:
+  - token-efficient diversity
+  - multi-agent generation
+  - negative result
+  - pre-registration
+  - embedding clustering
+  - budget-matched accounting
+preferred-citation:
+  type: article
+  title: "Grounding Doesn't Pay: A Token-Matched Negative Result on Creative Diversity"
+  authors:
+    - family-names: "Flores"
+      given-names: "Carlos Ulisses"
+      orcid: "https://orcid.org/0000-0002-6034-7765"
+      affiliation: "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
+  year: 2026
+  languages:
+    - en

@@ -1,0 +1,17 @@
+# Track 2 — re-derive the pre-registered scores from the frozen generation.
+# The clustering libraries (scikit-learn / scipy / numpy) determine the exact
+# cluster counts, so they are PINNED to the versions the scoring was verified
+# under (the clustering stack is locked in requirements.lock). sentence-transformers
+# provides the pre-registered MiniLM encoder; a TF-IDF fallback (scikit-learn
+# only) reproduces the verdict without it. See PROVENANCE.md for what each layer
+# proves. HDBSCAN and AgglomerativeClustering are native in scikit-learn (no
+# standalone hdbscan package needed).
+numpy==2.4.6
+scipy==1.17.1
+scikit-learn==1.9.0
+joblib==1.5.3
+threadpoolctl==3.6.0
+
+# Pre-registered encoder (all-MiniLM-L6-v2). Heavier (pulls torch); the exact
+# numbers reproduce under it. Pin your torch build to your platform.
+sentence-transformers>=2.2,<4

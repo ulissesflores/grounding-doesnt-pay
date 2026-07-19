@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+# Virtual envs
+.venv/
+venv/
+env/
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Workspace posture metadata — never published
+.profile
+
+# Track-2 working outputs (non-sealed)
+code/results/
+output/robustness/
