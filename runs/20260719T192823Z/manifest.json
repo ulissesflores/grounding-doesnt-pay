@@ -1,10 +1,10 @@
 {
-  "run_id": "20260719T181656Z",
-  "created_utc": "2026-07-19T18:16:56.729270+00:00",
+  "run_id": "20260719T192823Z",
+  "created_utc": "2026-07-19T19:28:23.068887+00:00",
   "git": {
     "repository_url": "set at release",
     "commit": "set at release",
-    "tag": null
+    "tag": "set at release"
   },
   "environment": {
     "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
@@ -257,7 +257,7 @@
       "zipp==3.23.1"
     ]
   },
-  "artifact_root": "2eaeab3472ae309a49bf0369b06c87bcec317349f4bd2f1f547b9f1344a11d14",
+  "artifact_root": "831a6aef862b7406d641498605ab457b446d76029a348968c1f410d7a163216a",
   "chain_algorithm": "sha256 Merkle-per-stage + left-fold chain (scripts/build_chain.py)",
   "notes": "grounding-doesnt-pay replication seal; generation frozen (LOCK), scores reproducible under the declared pins"
 }

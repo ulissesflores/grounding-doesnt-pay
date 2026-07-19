@@ -136,6 +136,7 @@ Cite the Zenodo Version DOI of the release (minted with the artifact; see
 ```bibtex
 @misc{flores2026grounding,
   author       = {Flores, Carlos Ulisses},
+  orcid        = {https://orcid.org/0000-0002-6034-7765},
   title        = {Grounding Doesn't Pay: A Token-Matched Negative Result on Creative Diversity},
   year         = {2026},
   howpublished = {Codex Hash Research Laboratory, replication package},
